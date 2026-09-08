@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const home = readFileSync(new URL('../dist/index.html', import.meta.url), 'utf8');
+const styles = readFileSync(new URL('../src/styles.css', import.meta.url), 'utf8');
 
 const required = [
   'Log the case before the next one starts.',
@@ -29,6 +30,14 @@ for (const value of required) {
 
 for (const value of forbidden) {
   assert.ok(!home.includes(value), `Forbidden homepage content remains: ${value}`);
+}
+
+for (const value of ['.section-label', '.figure-label', '.feature-index', '.feature-item']) {
+  assert.ok(styles.includes(value), `Missing required style: ${value}`);
+}
+
+for (const value of ['.orbit-one', '.orbit-two', '.floating-note', '.feature-card:hover']) {
+  assert.ok(!styles.includes(value), `Obsolete homepage style remains: ${value}`);
 }
 
 console.log('Homepage content contract passed.');
