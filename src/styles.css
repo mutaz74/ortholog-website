@@ -28,7 +28,7 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 0;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font);
@@ -237,43 +237,6 @@ a {
   padding-right: clamp(16px, 4vw, 56px);
 }
 
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin: 0 0 24px;
-  color: var(--teal);
-  font-size: 0.78rem;
-  font-weight: 760;
-  letter-spacing: 0.14em;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-
-.eyebrow::before {
-  width: 34px;
-  height: 3px;
-  flex: 0 0 auto;
-  content: "";
-  border-radius: 999px;
-  background: currentColor;
-}
-
-.section-label,
-.figure-label {
-  color: var(--teal);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  line-height: 1.35;
-  text-transform: uppercase;
-}
-
-.section-label {
-  margin: 0 0 24px;
-}
-
 .hero h1 {
   max-width: 760px;
   margin: 0;
@@ -343,12 +306,6 @@ a {
   background: var(--teal-soft);
 }
 
-.figure-label {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-}
-
 .phone {
   position: relative;
   overflow: hidden;
@@ -382,9 +339,7 @@ a {
 }
 
 .phone-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: none;
 }
 
 .phone-hero {
@@ -393,11 +348,10 @@ a {
   margin-top: 62px;
 }
 
-.phone-screen-crop img {
-  width: 118%;
-  max-width: none;
+.app-screen-crop {
+  width: 124.5%;
   height: auto;
-  transform: translate(-7.6%, -4.2%);
+  transform: translate(-9.9%, -14.7%);
 }
 
 .intro {
@@ -409,11 +363,6 @@ a {
   grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
   column-gap: 80px;
   align-items: end;
-}
-
-.section-heading .eyebrow,
-.section-heading .section-label {
-  grid-column: 1 / -1;
 }
 
 .section-heading h2,
@@ -446,8 +395,8 @@ a {
 }
 
 .feature-item {
-  min-height: 270px;
-  padding: 30px 31px;
+  min-height: 215px;
+  padding: 38px 31px;
 }
 
 .feature-item + .feature-item {
@@ -461,15 +410,6 @@ a {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
-}
-
-.feature-number {
-  margin: 0 0 64px;
-  color: var(--teal);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 
 .feature-item h3 {
@@ -508,11 +448,6 @@ a {
   z-index: 2;
   align-self: center;
   padding: 78px 36px 78px 72px;
-}
-
-.showcase .eyebrow,
-.showcase .section-label {
-  color: #6ccabc;
 }
 
 .showcase h2 {
@@ -567,7 +502,7 @@ a {
 .phone-small {
   position: absolute;
   width: 300px;
-  height: 650px;
+  height: 600px;
   padding: 10px;
   border-radius: 48px;
 }
@@ -597,14 +532,6 @@ a {
   transform: rotate(6deg);
 }
 
-.phone-small .phone-screen img,
-.phone-export .phone-screen img {
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  object-fit: cover;
-}
-
 .detail-strip {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -628,7 +555,7 @@ a {
   bottom: -180px;
   z-index: 2;
   width: 326px;
-  height: 708px;
+  height: 648px;
   padding: 11px;
   border-radius: 51px;
   transform: rotate(3deg);
@@ -650,10 +577,6 @@ a {
   background: var(--surface);
 }
 
-.export-card .section-label {
-  margin-bottom: 35px;
-}
-
 .export-card strong {
   display: block;
   max-width: 250px;
@@ -668,7 +591,7 @@ a {
   font-size: 0.9rem;
 }
 
-.detail-copy > p:not(.eyebrow) {
+.detail-copy > p {
   max-width: 555px;
   margin: 28px 0 0;
   color: var(--muted);
@@ -705,7 +628,7 @@ a {
 }
 
 .privacy-section {
-  padding-bottom: 145px;
+  padding-block: 32px;
 }
 
 .privacy-panel {
@@ -738,7 +661,7 @@ a {
   font-size: clamp(2.35rem, 4vw, 3.65rem);
 }
 
-.privacy-panel > div:nth-child(2) > p:not(.eyebrow) {
+.privacy-panel > div:nth-child(2) > p {
   max-width: 650px;
   margin: 24px 0 0;
   color: #4f625e;
@@ -804,7 +727,7 @@ a {
   font-size: clamp(3rem, 5vw, 4.7rem);
 }
 
-.final-copy > p:not(.eyebrow) {
+.final-copy > p {
   margin: 24px 0 0;
   color: var(--muted);
   font-size: 1.05rem;
@@ -1191,10 +1114,6 @@ a {
     border-left: 0;
   }
 
-  .feature-number {
-    margin-bottom: 28px;
-  }
-
   .showcase {
     grid-template-columns: 1fr;
   }
@@ -1344,7 +1263,7 @@ a {
 
   .phone-small {
     width: 232px;
-    height: 503px;
+    height: 456px;
     border-radius: 38px;
   }
 
@@ -1375,9 +1294,9 @@ a {
 
   .phone-export {
     right: -60px;
-    bottom: -165px;
+    bottom: -115px;
     width: 280px;
-    height: 608px;
+    height: 553px;
   }
 
   .privacy-panel {

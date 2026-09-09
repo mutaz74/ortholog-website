@@ -152,11 +152,11 @@ const privacyTemplate = (content, sections) => `<!doctype html>
       <a class="brand" href="/" aria-label="OrthoLog home"><img src="/assets/app-icon.png" alt="" width="44" height="44" /><span>OrthoLog</span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button><span></span><span></span><span></span><span class="sr-only">Open navigation</span></button>
       <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-menu>
-        <a href="/#features">Features</a><a aria-current="page" href="/privacy/">Privacy</a><a href="/support/">Support</a><a class="button button-teal button-small" href="https://apps.apple.com/app/ortholog/id6792134663">View on the App Store</a>
+        <a href="/#features">Features</a><a aria-current="page" href="/privacy/">Privacy</a><a href="/support/">Support</a><a class="button button-teal button-small" href="https://apps.apple.com/app/ortholog/id6792134663">Download on the App Store</a>
       </nav>
     </header>
     <main class="interior-main" id="main">
-      <section class="interior-hero section-shell"><p class="eyebrow">Privacy</p><h1>Plain language. No fine-print surprises.</h1><p>This is the complete policy for what OrthoLog stores, what can be sent, and what always stays under your control.</p></section>
+      <section class="interior-hero section-shell"><h1>Plain language. No fine-print surprises.</h1><p>This is the complete policy for what OrthoLog stores, what can be sent, and what always stays under your control.</p></section>
       <section class="legal-shell section-shell">
         <aside class="legal-index" aria-label="Privacy policy sections"><strong>On this page</strong>${sections.map(({ id, text }) => `<a href="#${id}">${inline(text)}</a>`).join('')}</aside>
         <article class="legal">${content}<div class="legal-contact"><strong>Questions?</strong><p>Email <a href="mailto:privacy@ortholog.ca">privacy@ortholog.ca</a>.</p></div></article>
@@ -178,6 +178,6 @@ await cp(path.join(root, 'src', 'site.js'), path.join(dist, 'site.js'));
 const policy = await readFile(path.join(root, 'content', 'privacy.md'), 'utf8');
 const renderedPolicy = renderMarkdown(policy);
 await writeFile(path.join(dist, 'privacy', 'index.html'), privacyTemplate(renderedPolicy.html, renderedPolicy.sections));
-await writeFile(path.join(dist, '404.html'), '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found — OrthoLog</title><link rel="stylesheet" href="/styles.css"><main class="interior-hero section-shell"><p class="eyebrow">404</p><h1>That page is not here.</h1><p><a class="button button-dark" href="/">Return to OrthoLog</a></p></main>');
+await writeFile(path.join(dist, '404.html'), '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found — OrthoLog</title><link rel="stylesheet" href="/styles.css"><main class="interior-hero section-shell"><h1>That page is not here.</h1><p><a class="button button-dark" href="/">Return to OrthoLog</a></p></main>');
 
 console.log('Built OrthoLog website in dist/');
