@@ -354,18 +354,6 @@ a {
   transform: translate(-9.9%, -14.7%);
 }
 
-.intro {
-  padding-block: 140px 130px;
-}
-
-.section-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
-  column-gap: 80px;
-  align-items: end;
-}
-
-.section-heading h2,
 .showcase h2,
 .detail-copy h2,
 .privacy-panel h2,
@@ -376,53 +364,6 @@ a {
   font-weight: 640;
   letter-spacing: -0.06em;
   line-height: 1.02;
-}
-
-.section-heading > p:last-child {
-  margin: 0 0 6px;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.6;
-}
-
-.feature-index {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 64px;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: rgba(252, 251, 248, 0.48);
-}
-
-.feature-item {
-  min-height: 215px;
-  padding: 38px 31px;
-}
-
-.feature-item + .feature-item {
-  border-left: 1px solid var(--hairline);
-}
-
-.privacy-mark svg {
-  width: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.8;
-}
-
-.feature-item h3 {
-  max-width: 310px;
-  margin: 0;
-  font-size: 1.46rem;
-  letter-spacing: -0.04em;
-  line-height: 1.18;
-}
-
-.feature-item > p:last-child {
-  margin: 18px 0 0;
-  color: var(--muted);
 }
 
 .showcase {
@@ -632,28 +573,14 @@ a {
 }
 
 .privacy-panel {
-  display: grid;
-  grid-template-columns: 76px minmax(0, 1fr) minmax(300px, 0.63fr);
-  gap: 38px;
-  align-items: start;
-  padding: 70px;
+  padding: clamp(50px, 7vw, 82px);
   border: 1px solid rgba(12, 123, 109, 0.16);
   border-radius: 12px;
   background: var(--teal-pale);
 }
 
-.privacy-mark {
-  display: grid;
-  width: 68px;
-  height: 68px;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--teal);
-  color: white;
-}
-
-.privacy-mark svg {
-  width: 32px;
+.privacy-copy {
+  max-width: 900px;
 }
 
 .privacy-panel h2 {
@@ -661,7 +588,7 @@ a {
   font-size: clamp(2.35rem, 4vw, 3.65rem);
 }
 
-.privacy-panel > div:nth-child(2) > p {
+.privacy-copy > p {
   max-width: 650px;
   margin: 24px 0 0;
   color: #4f625e;
@@ -683,35 +610,14 @@ a {
   text-decoration: underline;
 }
 
-.privacy-facts {
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(7, 91, 81, 0.16);
-}
-
-.privacy-facts > div {
-  padding: 19px 0;
-  border-bottom: 1px solid rgba(7, 91, 81, 0.16);
-}
-
-.privacy-facts dt {
-  font-weight: 700;
-}
-
-.privacy-facts dd {
-  margin: 3px 0 0;
-  color: #5c706b;
-  font-size: 0.88rem;
-}
-
 .final-cta {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 520px;
+  min-height: 350px;
   overflow: hidden;
   margin-bottom: 36px;
-  padding: 68px 74px;
+  padding: 54px 68px;
   border: 1px solid var(--hairline);
   border-radius: 12px;
   background: var(--surface-strong);
@@ -1020,13 +926,6 @@ a {
     right: 18px;
   }
 
-  .privacy-panel {
-    grid-template-columns: 68px 1fr;
-  }
-
-  .privacy-facts {
-    grid-column: 2;
-  }
 }
 
 @media (max-width: 820px) {
@@ -1092,28 +991,6 @@ a {
     gap: 14px;
   }
 
-  .intro {
-    padding-block: 110px;
-  }
-
-  .section-heading {
-    grid-template-columns: 1fr;
-    row-gap: 25px;
-  }
-
-  .feature-index {
-    grid-template-columns: 1fr;
-  }
-
-  .feature-item {
-    min-height: auto;
-  }
-
-  .feature-item + .feature-item {
-    border-top: 1px solid var(--hairline);
-    border-left: 0;
-  }
-
   .showcase {
     grid-template-columns: 1fr;
   }
@@ -1147,12 +1024,7 @@ a {
   }
 
   .privacy-panel {
-    grid-template-columns: 1fr;
     padding: 48px;
-  }
-
-  .privacy-facts {
-    grid-column: 1;
   }
 
   .final-cta {
@@ -1210,10 +1082,7 @@ a {
   }
 
   .proof-row > div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    align-items: baseline;
+    display: block;
   }
 
   .device-stage {
@@ -1237,16 +1106,11 @@ a {
     height: 21px;
   }
 
-  .section-heading h2,
   .showcase h2,
   .detail-copy h2,
   .privacy-panel h2,
   .final-cta h2 {
     font-size: clamp(2.45rem, 11vw, 3.5rem);
-  }
-
-  .feature-item {
-    padding: 27px;
   }
 
   .showcase {
@@ -1305,8 +1169,8 @@ a {
   }
 
   .final-cta {
-    min-height: 530px;
-    padding: 48px 28px;
+    min-height: 360px;
+    padding: 44px 28px;
     border-radius: 12px;
   }
 

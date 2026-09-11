@@ -8,7 +8,16 @@
       name="description"
       content="A surgical case logbook designed around orthopedic residency. Log cases in seconds, work fully offline, and keep your record on your iPhone and private iCloud."
     />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#f4f1ea" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="OrthoLog" />
+    <meta property="og:title" content="OrthoLog — Surgical case logging for orthopedic residents" />
+    <meta
+      property="og:description"
+      content="A surgical case logbook designed around orthopedic residency. Log cases in seconds, work fully offline, and keep your record on your iPhone and private iCloud."
+    />
+    <meta property="og:url" content="https://ortholog.ca/" />
     <link rel="canonical" href="https://ortholog.ca/" />
     <link rel="icon" href="/assets/app-icon.png" />
     <link rel="stylesheet" href="/styles.css" />
@@ -46,9 +55,9 @@
             <a class="button button-dark" href="https://apps.apple.com/app/ortholog/id6792134663">Download on the App Store</a>
           </div>
           <div class="proof-row" aria-label="OrthoLog at a glance">
-            <div><strong>Routine cases in seconds</strong><span>log while you are still on service</span></div>
-            <div><strong>Privacy first</strong><span>no OrthoLog account or login</span></div>
-            <div><strong>Fully offline</strong><span>your case log stays with you</span></div>
+            <div><strong>Fast, smart logging</strong></div>
+            <div><strong>Fully private — no account or login</strong></div>
+            <div><strong>Fully offline — no cloud required</strong></div>
           </div>
         </div>
 
@@ -63,45 +72,15 @@
 
       <section class="privacy-section section-shell" id="privacy">
         <div class="privacy-panel">
-          <div class="privacy-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 3 5.5 5.5v5.8c0 4.2 2.6 7.9 6.5 9.7 3.9-1.8 6.5-5.5 6.5-9.7V5.5L12 3Z" /><path d="m9.2 12 1.8 1.8 3.8-4" /></svg>
-          </div>
-          <div>
+          <div class="privacy-copy">
             <h2>Fully offline. No third-party cloud.</h2>
-            <p>Log every case without a connection. Your case log is stored on your iPhone and can sync through your private iCloud account. There is no OrthoLog account, advertising or tracking.</p>
+            <p>Your case log is stored on your iPhone and syncs through your private iCloud account. There is no OrthoLog account, advertising or tracking.</p>
             <a class="text-link" href="/privacy/">Read the full privacy policy <span aria-hidden="true">→</span></a>
           </div>
-          <dl class="privacy-facts">
-            <div><dt>Your iPhone</dt><dd>Cases are stored on your device.</dd></div>
-            <div><dt>Your iCloud</dt><dd>Optional sync uses the Apple ID already on your phone.</dd></div>
-            <div><dt>No third party</dt><dd>No separate cloud service or OrthoLog login.</dd></div>
-          </dl>
         </div>
       </section>
 
-      <section class="intro section-shell" id="features">
-        <div class="section-heading">
-          <h2>Record the details worth keeping.</h2>
-          <p>Start with the procedure. Add your role, approach, technique, graft, components or other fields that apply to the operation.</p>
-        </div>
-
-        <div class="feature-index">
-          <article class="feature-item">
-            <h3>Find the procedure</h3>
-            <p>Search the catalog, use the body map or start from a recent case.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Add the operative detail</h3>
-            <p>Record your involvement and the procedure-specific fields you want to keep.</p>
-          </article>
-          <article class="feature-item">
-            <h3>Review and export</h3>
-            <p>Filter your history, then export a spreadsheet or a case book with images.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="showcase section-shell" aria-labelledby="workflow-title">
+      <section class="showcase section-shell" id="features" aria-labelledby="workflow-title">
         <div class="showcase-copy">
           <h2 id="workflow-title">How logging works.</h2>
           <ol class="workflow-list">
@@ -111,7 +90,7 @@
             </li>
             <li>
               <span>02</span>
-              <div><strong>Add the fields that apply</strong><p>Record your involvement and the operative details specific to that procedure.</p></div>
+              <div><strong>Add the fields that apply</strong><p>Record your involvement, approach, technique, graft, components and any other details specific to that procedure.</p></div>
             </li>
             <li>
               <span>03</span>
@@ -120,6 +99,10 @@
             <li>
               <span>04</span>
               <div><strong>Save the case</strong><p>The case stays searchable by date, rotation, site, surgeon and subspecialty.</p></div>
+            </li>
+            <li>
+              <span>05</span>
+              <div><strong>Export when you need it</strong><p>Create a spreadsheet for review or an offline case book with images.</p></div>
             </li>
           </ol>
         </div>
@@ -137,30 +120,29 @@
       <section class="detail-strip section-shell">
         <div class="detail-visual">
           <div class="export-card">
-            <strong>Spreadsheet or case book</strong>
-            <p>Export structured case data, or create an offline case book containing the images you chose to attach.</p>
+            <strong>Bring your current casebook</strong>
+            <p>Import cases from an existing Excel, CSV or TSV file.</p>
           </div>
           <div class="phone phone-export">
-            <div class="phone-screen"><img class="app-screen-crop" src="/assets/screen-08.png" alt="OrthoLog export options" width="1320" height="2868" loading="lazy" decoding="async" /></div>
+            <div class="phone-screen"><img class="app-screen-crop" src="/assets/screen-10.png" alt="OrthoLog case import screen" width="1320" height="2868" loading="lazy" decoding="async" /></div>
           </div>
         </div>
         <div class="detail-copy">
-          <h2>Review and export.</h2>
-          <p>Filter your history by date, rotation, subspecialty, operation, procedure, involvement or attending. Export a spreadsheet for review, or a case book with the images you chose to attach.</p>
+          <h2>Bring your existing casebook with you.</h2>
+          <p>Import the cases you already have, review how OrthoLog matched them, and keep logging from there.</p>
           <div class="detail-points">
-            <div><strong>Searchable history</strong><span>Return to the case behind any count.</span></div>
-            <div><strong>Photos remain private</strong><span>Attached images stay on your devices and in exports you deliberately create.</span></div>
+            <div><strong>Excel, CSV or TSV</strong><span>Import from the file you already use.</span></div>
+            <div><strong>Review before import</strong><span>Confirm any wording OrthoLog cannot place automatically.</span></div>
           </div>
         </div>
       </section>
 
-      <section class="final-cta section-shell" id="support">
+      <section class="final-cta section-shell">
         <div class="final-copy">
           <h2>Free on the App Store.</h2>
           <p>Download OrthoLog on iPhone.</p>
           <div class="hero-actions">
             <a class="button button-dark" href="https://apps.apple.com/app/ortholog/id6792134663">Download on the App Store</a>
-            <a class="text-link" href="/support/">Get support <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <img class="final-logo" src="/assets/logo-mark.png" alt="" width="512" height="481" loading="lazy" decoding="async" />
@@ -174,7 +156,7 @@
         <a href="/support/">Support</a>
         <a href="mailto:hello@ortholog.ca">hello@ortholog.ca</a>
       </div>
-      <p>© 2026 Mutaz Mohamed. OrthoLog is a surgical case logbook, not a diagnostic or treatment tool.</p>
+      <p>© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.</p>
     </footer>
   </body>
 </html>

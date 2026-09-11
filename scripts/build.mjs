@@ -162,7 +162,7 @@ const privacyTemplate = (content, sections) => `<!doctype html>
         <article class="legal">${content}<div class="legal-contact"><strong>Questions?</strong><p>Email <a href="mailto:privacy@ortholog.ca">privacy@ortholog.ca</a>.</p></div></article>
       </section>
     </main>
-    <footer class="site-footer section-shell"><div class="brand footer-brand"><img src="/assets/app-icon.png" alt="" width="40" height="40" /><span>OrthoLog</span></div><div class="footer-links"><a href="/">Home</a><a href="/support/">Support</a><a href="mailto:hello@ortholog.ca">hello@ortholog.ca</a></div><p>© 2026 Mutaz Mohamed. OrthoLog is a surgical case logbook, not a diagnostic or treatment tool.</p></footer>
+    <footer class="site-footer section-shell"><div class="brand footer-brand"><img src="/assets/app-icon.png" alt="" width="40" height="40" /><span>OrthoLog</span></div><div class="footer-links"><a href="/">Home</a><a href="/support/">Support</a><a href="mailto:hello@ortholog.ca">hello@ortholog.ca</a></div><p>© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.</p></footer>
   </body>
 </html>`;
 
