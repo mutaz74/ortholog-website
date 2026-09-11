@@ -26,8 +26,12 @@ const required = [
   'Download on the App Store',
   'loading="lazy"',
   'name="robots" content="index, follow"',
-  'href="/styles.css?v=20260910c"',
-  'class="app-screen-crop"',
+  'href="/styles.css?v=20260910d"',
+  'class="iphone13-screen"',
+  'src="/assets/iphone13-home.png"',
+  'src="/assets/iphone13-procedure.png"',
+  'src="/assets/iphone13-photos.png"',
+  'width="1170" height="2532"',
   '© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.',
 ];
 
@@ -63,6 +67,10 @@ const forbidden = [
   'class="detail-points',
   'class="phone phone-export',
   'class="export-card',
+  'src="/assets/screen-01.png"',
+  'src="/assets/screen-02.png"',
+  'src="/assets/screen-05.png"',
+  'class="app-screen-crop"',
 ];
 
 for (const value of required) {
@@ -82,13 +90,15 @@ assert.ok(support.includes('mailto:hello@ortholog.ca?subject=OrthoLog%20support'
 assert.ok(support.includes('© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.'), 'Support footer is out of date.');
 assert.ok(privacy.includes('© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.'), 'Privacy footer is out of date.');
 
-for (const value of ['.app-screen-crop', '.privacy-copy', '.workflow-list', '.import-copy', '.import-review', '.final-cta']) {
+for (const value of ['.iphone13-screen', '.phone-screen::after', '.privacy-copy', '.workflow-list', '.import-copy', '.import-review', '.final-cta']) {
   assert.ok(styles.includes(value), `Missing required style: ${value}`);
 }
 
-for (const value of ['.intro', '.section-heading', '.feature-index', '.feature-item', '.privacy-mark', '.privacy-facts', '.section-label', '.figure-label', '.feature-number', '.eyebrow', '.orbit-one', '.orbit-two', '.floating-note', '.feature-card:hover', '.detail-strip', '.detail-visual', '.detail-copy', '.detail-points', '.phone-export', '.export-card', '.phone::after', '.phone-small::after']) {
+for (const value of ['.intro', '.section-heading', '.feature-index', '.feature-item', '.privacy-mark', '.privacy-facts', '.section-label', '.figure-label', '.feature-number', '.eyebrow', '.orbit-one', '.orbit-two', '.floating-note', '.feature-card:hover', '.detail-strip', '.detail-visual', '.detail-copy', '.detail-points', '.phone-export', '.export-card', '.phone::after', '.phone-small::after', '.app-screen-crop']) {
   assert.ok(!styles.includes(value), `Obsolete homepage style remains: ${value}`);
 }
+
+assert.equal((home.match(/class="iphone13-screen"/g) ?? []).length, 3, 'Homepage must use exactly three iPhone 13 screenshots.');
 
 assert.ok(robots.includes('User-agent: *\nAllow: /'), 'robots.txt must allow crawling.');
 assert.ok(robots.includes('Sitemap: https://ortholog.ca/sitemap.xml'), 'robots.txt must point to the sitemap.');

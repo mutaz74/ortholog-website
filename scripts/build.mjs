@@ -143,7 +143,7 @@ const privacyTemplate = (content, sections) => `<!doctype html>
     <meta name="theme-color" content="#f4f1ea" />
     <link rel="canonical" href="https://ortholog.ca/privacy/" />
     <link rel="icon" href="/assets/app-icon.png" />
-    <link rel="stylesheet" href="/styles.css?v=20260910c" />
+    <link rel="stylesheet" href="/styles.css?v=20260910d" />
     <script src="/site.js" defer></script>
   </head>
   <body class="interior-page">
@@ -178,6 +178,6 @@ await cp(path.join(root, 'src', 'site.js'), path.join(dist, 'site.js'));
 const policy = await readFile(path.join(root, 'content', 'privacy.md'), 'utf8');
 const renderedPolicy = renderMarkdown(policy);
 await writeFile(path.join(dist, 'privacy', 'index.html'), privacyTemplate(renderedPolicy.html, renderedPolicy.sections));
-await writeFile(path.join(dist, '404.html'), '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found — OrthoLog</title><link rel="stylesheet" href="/styles.css?v=20260910c"><main class="interior-hero section-shell"><h1>That page is not here.</h1><p><a class="button button-dark" href="/">Return to OrthoLog</a></p></main>');
+await writeFile(path.join(dist, '404.html'), '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Page not found — OrthoLog</title><link rel="stylesheet" href="/styles.css?v=20260910d"><main class="interior-hero section-shell"><h1>That page is not here.</h1><p><a class="button button-dark" href="/">Return to OrthoLog</a></p></main>');
 
 console.log('Built OrthoLog website in dist/');
