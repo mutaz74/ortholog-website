@@ -12,7 +12,7 @@ const required = [
   'A logbook designed around your residency.',
   'Fast, smart logging',
   'Fully private — no account or login',
-  'Fully offline — no cloud required',
+  'Offline — no cloud required',
   'Fully offline. No third-party cloud.',
   'Your case log is stored on your iPhone and syncs through your private iCloud account.',
   'How logging works.',
