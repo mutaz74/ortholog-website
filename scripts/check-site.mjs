@@ -19,13 +19,14 @@ const required = [
   'Record your involvement, approach, technique, graft, components',
   'Attach pre-op, intra-op and post-op images, each with a note about what happened.',
   'Export when you need it',
-  'Bring your existing casebook with you.',
-  'Import cases from an existing Excel, CSV or TSV file.',
+  'Bring your existing casebook.',
+  'If your current casebook is a spreadsheet, import it into OrthoLog.',
+  'Review before import',
   'Free on the App Store.',
   'Download on the App Store',
-  'src="/assets/screen-10.png"',
   'loading="lazy"',
   'name="robots" content="index, follow"',
+  'href="/styles.css?v=20260910c"',
   'class="app-screen-crop"',
   '© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.',
 ];
@@ -55,6 +56,13 @@ const forbidden = [
   'Fast when it should be. Detailed when it needs to be.',
   'Built to get out of the way',
   '© 2026 Mutaz Mohamed.',
+  'src="/assets/screen-10.png"',
+  'class="detail-strip',
+  'class="detail-visual',
+  'class="detail-copy',
+  'class="detail-points',
+  'class="phone phone-export',
+  'class="export-card',
 ];
 
 for (const value of required) {
@@ -74,11 +82,11 @@ assert.ok(support.includes('mailto:hello@ortholog.ca?subject=OrthoLog%20support'
 assert.ok(support.includes('© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.'), 'Support footer is out of date.');
 assert.ok(privacy.includes('© 2026 Mutaz M. Tageldein. OrthoLog is not a diagnostic or treatment tool.'), 'Privacy footer is out of date.');
 
-for (const value of ['.app-screen-crop', '.privacy-copy', '.workflow-list', '.final-cta']) {
+for (const value of ['.app-screen-crop', '.privacy-copy', '.workflow-list', '.import-copy', '.import-review', '.final-cta']) {
   assert.ok(styles.includes(value), `Missing required style: ${value}`);
 }
 
-for (const value of ['.intro', '.section-heading', '.feature-index', '.feature-item', '.privacy-mark', '.privacy-facts', '.section-label', '.figure-label', '.feature-number', '.eyebrow', '.orbit-one', '.orbit-two', '.floating-note', '.feature-card:hover']) {
+for (const value of ['.intro', '.section-heading', '.feature-index', '.feature-item', '.privacy-mark', '.privacy-facts', '.section-label', '.figure-label', '.feature-number', '.eyebrow', '.orbit-one', '.orbit-two', '.floating-note', '.feature-card:hover', '.detail-strip', '.detail-visual', '.detail-copy', '.detail-points', '.phone-export', '.export-card', '.phone::after', '.phone-small::after']) {
   assert.ok(!styles.includes(value), `Obsolete homepage style remains: ${value}`);
 }
 

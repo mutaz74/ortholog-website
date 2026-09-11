@@ -310,6 +310,7 @@ a {
   position: relative;
   overflow: hidden;
   flex: 0 0 auto;
+  margin: 0;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.36);
   border-radius: 58px;
@@ -317,20 +318,8 @@ a {
   box-shadow: var(--shadow-phone);
 }
 
-.phone::after {
-  position: absolute;
-  top: 21px;
-  left: 50%;
-  z-index: 4;
-  width: 100px;
-  height: 27px;
-  content: "";
-  border-radius: 18px;
-  background: #0d0e0e;
-  transform: translateX(-50%);
-}
-
 .phone-screen {
+  position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -349,13 +338,13 @@ a {
 }
 
 .app-screen-crop {
-  width: 124.5%;
+  width: 119%;
   height: auto;
-  transform: translate(-9.9%, -14.7%);
+  transform: translate(-7.6%, -13.4%);
 }
 
 .showcase h2,
-.detail-copy h2,
+.import-copy h2,
 .privacy-panel h2,
 .final-cta h2,
 .interior-hero h1 {
@@ -435,23 +424,21 @@ a {
 }
 
 .phone-pair {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2.4vw, 28px);
   min-height: 860px;
   overflow: hidden;
+  padding: 64px clamp(24px, 3vw, 44px);
 }
 
 .phone-small {
-  position: absolute;
-  width: 300px;
-  height: 600px;
+  width: min(280px, calc(50% - 12px));
+  height: auto;
+  aspect-ratio: 1 / 2;
   padding: 10px;
   border-radius: 48px;
-}
-
-.phone-small::after {
-  top: 17px;
-  width: 82px;
-  height: 22px;
 }
 
 .phone-small .phone-screen {
@@ -459,113 +446,59 @@ a {
 }
 
 .phone-back {
-  top: 128px;
-  left: 58px;
   z-index: 1;
-  opacity: 0.7;
-  transform: rotate(-8deg);
 }
 
 .phone-front {
-  top: 74px;
-  right: 52px;
-  z-index: 3;
-  transform: rotate(6deg);
+  z-index: 2;
 }
 
-.detail-strip {
+.import-section {
+  padding-block: 96px;
+}
+
+.import-copy {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 90px;
-  padding-block: 160px;
-}
-
-.detail-visual {
-  position: relative;
-  min-height: 670px;
-  overflow: hidden;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  align-items: end;
+  gap: 32px 80px;
+  padding: clamp(48px, 7vw, 82px);
   border: 1px solid rgba(7, 91, 81, 0.18);
   border-radius: 12px;
-  background: var(--teal-soft);
+  background: var(--teal-pale);
 }
 
-.phone-export {
-  position: absolute;
-  right: -16px;
-  bottom: -180px;
-  z-index: 2;
-  width: 326px;
-  height: 648px;
-  padding: 11px;
-  border-radius: 51px;
-  transform: rotate(3deg);
-}
-
-.phone-export .phone-screen {
-  border-radius: 41px;
-}
-
-.export-card {
-  position: absolute;
-  top: 76px;
-  left: 44px;
-  z-index: 4;
-  width: 62%;
-  padding: 27px;
-  border: 1px solid rgba(7, 91, 81, 0.16);
-  border-radius: 8px;
-  background: var(--surface);
-}
-
-.export-card strong {
-  display: block;
-  max-width: 250px;
-  font-size: 1.55rem;
-  letter-spacing: -0.045em;
-  line-height: 1.15;
-}
-
-.export-card p {
-  margin: 14px 0 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.detail-copy > p {
+.import-copy > p {
+  grid-column: 1;
   max-width: 555px;
-  margin: 28px 0 0;
+  margin: 0;
   color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.65;
 }
 
-.detail-points {
-  display: grid;
-  gap: 24px;
-  margin-top: 45px;
-}
-
-.detail-points > div {
-  padding: 22px 0 0 22px;
-  border-top: 1px solid var(--hairline);
+.import-review {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  padding: 4px 0 4px 28px;
   border-left: 3px solid var(--teal);
 }
 
-.detail-points strong,
-.detail-points span {
+.import-review strong,
+.import-review span {
   display: block;
 }
 
-.detail-points strong {
+.import-review strong {
   font-size: 1.05rem;
 }
 
-.detail-points span {
+.import-review span {
   max-width: 430px;
-  margin-top: 5px;
+  margin-top: 7px;
   color: var(--muted);
   font-size: 0.91rem;
+  line-height: 1.5;
 }
 
 .privacy-section {
@@ -918,14 +851,6 @@ a {
     padding-left: 48px;
   }
 
-  .phone-back {
-    left: 20px;
-  }
-
-  .phone-front {
-    right: 18px;
-  }
-
 }
 
 @media (max-width: 820px) {
@@ -1000,27 +925,24 @@ a {
   }
 
   .phone-pair {
-    min-height: 740px;
+    min-height: 680px;
+    padding-block: 54px;
   }
 
-  .phone-back {
-    top: 80px;
-    left: 8%;
+  .import-section {
+    padding-block: 80px;
   }
 
-  .phone-front {
-    top: 26px;
-    right: 8%;
-  }
-
-  .detail-strip {
+  .import-copy {
     grid-template-columns: 1fr;
-    gap: 65px;
-    padding-block: 110px;
+    align-items: start;
+    gap: 22px;
   }
 
-  .detail-copy {
-    grid-row: 1;
+  .import-review {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 10px;
   }
 
   .privacy-panel {
@@ -1100,14 +1022,8 @@ a {
     border-radius: 37px;
   }
 
-  .phone::after {
-    top: 16px;
-    width: 78px;
-    height: 21px;
-  }
-
   .showcase h2,
-  .detail-copy h2,
+  .import-copy h2,
   .privacy-panel h2,
   .final-cta h2 {
     font-size: clamp(2.45rem, 11vw, 3.5rem);
@@ -1122,12 +1038,14 @@ a {
   }
 
   .phone-pair {
-    min-height: 600px;
+    gap: 12px;
+    min-height: 510px;
+    padding: 48px 14px;
   }
 
   .phone-small {
-    width: 232px;
-    height: 456px;
+    width: calc(50% - 6px);
+    height: auto;
     border-radius: 38px;
   }
 
@@ -1135,32 +1053,8 @@ a {
     border-radius: 30px;
   }
 
-  .phone-back {
-    top: 70px;
-    left: -22px;
-  }
-
-  .phone-front {
-    top: 20px;
-    right: -18px;
-  }
-
-  .detail-visual {
-    min-height: 570px;
-  }
-
-  .export-card {
-    top: 44px;
-    left: 22px;
-    width: 76%;
-    padding: 21px;
-  }
-
-  .phone-export {
-    right: -60px;
-    bottom: -115px;
-    width: 280px;
-    height: 553px;
+  .import-copy {
+    padding: 42px 26px;
   }
 
   .privacy-panel {
